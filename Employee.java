@@ -1,25 +1,35 @@
+
 package practiceexamples;
 
-import java.util.Scanner;
+public class Employee {
 
-class employeedetails {
-    int emp_id, salary;
-    String name, address, gender, email;
+    private Integer id;
+    private String name;
+    private Double salary;
+    private String designation;
+    private String location;
 
-    public int getEmp_id() {
-        return emp_id;
+    public Employee() {
+        // TODO Auto-generated constructor stub
     }
 
-    public void setEmp_id(int emp_id) {
-        this.emp_id = emp_id;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
+    public Employee(Integer id, String name, Double salary, String designation, String location) {
+        super();
+        this.id = id;
+        this.name = name;
         this.salary = salary;
+        this.designation = designation;
+        this.location = location;
+    }
+
+    //generate setters, getters and toString
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -30,62 +40,38 @@ class employeedetails {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public Double getSalary() {
+        return salary;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setSalary(Double salary) {
+        this.salary = salary;
     }
 
-    public String getDepartment() {
-        return gender;
+    public String getDesignation() {
+        return designation;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setDesignation(String designation) {
+        this.designation = designation;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLocation() {
+        return location;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     @Override
     public String toString() {
-        return "Employee [emp_id = " + emp_id + ", salary = " + salary + ", name = " + name + ", address = " + address
-                + ", gender = " + gender + ", email = " + email + "]";
-    }
-
-}
-
-public class Employee {
-    public static void main(String args[]) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter employee_ID");
-        String employee_id = input.next();
-        System.out.println("Enter employee_name:");
-        String name = input.next();
-        System.out.println("Enter employee_salary:");
-        String salary = input.next();
-        System.out.println("Enter employeeAddress:");
-        String address = input.next();
-        System.out.println("Enter employee_gender:");
-        String gender = input.next();
-        System.out.println("Enter employee_email:");
-        String email = input.next();
-        employeedetails emp = new employeedetails();
-        emp.setEmp_id(Integer.parseInt(employee_id));
-        emp.setName(name);
-        emp.setGender(gender);
-        emp.setSalary(Integer.parseInt(salary));
-        emp.setAddress(address);
-        emp.setEmail(email);
-
-        System.out.println(emp);
-
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                ", designation='" + designation + '\'' +
+                ", location='" + location + '\'' +
+                '}';
     }
 }
